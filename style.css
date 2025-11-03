@@ -1,0 +1,84 @@
+/* ====== GENERAL ====== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: #002b5b;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+header h1 { font-size: 1.8rem; margin-bottom: .3rem; }
+header nav {
+  margin-top: 0.8rem;
+}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.6rem;
+  font-weight: 500;
+}
+header nav a:hover { text-decoration: underline; }
+
+/* ====== HERO ====== */
+#hero {
+  background: url("https://images.unsplash.com/photo-1603297631958-161cdd53f6d5?auto=format&fit=crop&w=1950&q=80")
+    center/cover no-repeat;
+  color: white;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+#hero .hero-content {
+  background: rgba(0,0,0,0.6);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.btn {
+  display: inline-block;
+  background: #00a8e8;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.btn:hover { background: #007bb5; }
+
+/* ====== SECTIONS ====== */
+section { padding: 3rem 1rem; text-align: center; }
+h2 { color: #002b5b; margin-bottom: 1rem; }
+
+/* ====== SERVICES ====== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ====== CONTACT ====== */
+#contact p { margin: 0.5rem 0; }
+
+/* ====== FOOTER ====== */
+footer {
+  background: #002b5b;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
