@@ -1,10 +1,17 @@
-// Simple fade-in scroll animation
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.section').forEach(section => {
-    const top = section.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      section.style.opacity = 1;
-      section.style.transform = 'translateY(0)';
-    }
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  lucide.createIcons();
+
+  const animatedSections = document.querySelectorAll('.fade-up, .fade-in, .slide-in, .pop');
+
+  const revealOnScroll = () => {
+    animatedSections.forEach(section => {
+      const position = section.getBoundingClientRect().top;
+      if (position < window.innerHeight - 100) {
+        section.style.animationPlayState = 'running';
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
 });
