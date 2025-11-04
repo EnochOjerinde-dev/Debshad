@@ -1,84 +1,181 @@
-/* ====== GENERAL ====== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background: #f8f9fa;
 }
 
-/* ====== HEADER ====== */
-header {
-  background: #002b5b;
+/* HEADER */
+.header {
+  background: #002855;
   color: #fff;
-  text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-header h1 { font-size: 1.8rem; margin-bottom: .3rem; }
-header nav {
-  margin-top: 0.8rem;
-}
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 0.6rem;
-  font-weight: 500;
-}
-header nav a:hover { text-decoration: underline; }
 
-/* ====== HERO ====== */
-#hero {
-  background: url("https://images.unsplash.com/photo-1603297631958-161cdd53f6d5?auto=format&fit=crop&w=1950&q=80")
-    center/cover no-repeat;
-  color: white;
-  height: 70vh;
+.header .container {
+  width: 90%;
+  margin: auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.logo span {
+  color: #ffc107;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffc107;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,40,85,0.7), rgba(0,40,85,0.8)), url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81') center/cover no-repeat;
+  color: #fff;
+  display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content {
+  max-width: 600px;
   padding: 1rem;
 }
-#hero .hero-content {
-  background: rgba(0,0,0,0.6);
-  padding: 1.5rem;
-  border-radius: 10px;
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
 .btn {
   display: inline-block;
-  background: #00a8e8;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  margin-top: 1rem;
+  background: #ffc107;
+  color: #002855;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 4px;
+  transition: all 0.3s;
+  font-weight: bold;
 }
-.btn:hover { background: #007bb5; }
 
-/* ====== SECTIONS ====== */
-section { padding: 3rem 1rem; text-align: center; }
-h2 { color: #002b5b; margin-bottom: 1rem; }
+.btn:hover {
+  background: #ffdb4d;
+  transform: scale(1.05);
+}
 
-/* ====== SERVICES ====== */
+/* SECTIONS */
+.section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+h2 {
+  color: #002855;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-.card {
-  background: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-/* ====== CONTACT ====== */
-#contact p { margin: 0.5rem 0; }
+.service-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
 
-/* ====== FOOTER ====== */
-footer {
-  background: #002b5b;
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+
+/* CONTACT */
+.contact p {
+  font-size: 1.1rem;
+}
+
+.contact i {
+  color: #002855;
+  margin-right: 10px;
+}
+
+/* FOOTER */
+.footer {
+  background: #002855;
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  .hero h2 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .nav-links { flex-wrap: wrap; justify-content: center; }
 }
