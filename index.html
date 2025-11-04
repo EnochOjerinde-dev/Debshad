@@ -9,7 +9,12 @@
     <!-- Load Lucide Icons for professional visuals -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Custom Tailwind Configuration */
+        /* Custom Styles for a professional look and feel */
+        html { scroll-behavior: smooth; }
+        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+    </style>
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -24,26 +29,7 @@
                 }
             }
         }
-        /* Custom Styles for a professional look and feel */
-        html { scroll-behavior: smooth; }
-        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); }
-
-        /* Style for the Hero Image Overlay for Premium Look */
-        .hero-overlay {
-            /* Gradient for better text contrast over the image */
-            background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
-            z-index: 10;
-        }
-
-        /* Hero Image Placeholder with a transportation theme */
-        .hero-image {
-            background-image: url('https://placehold.co/1920x800/1e3a8a/f59e0b?text=High+Impact+Logistics+Truck');
-            background-size: cover;
-            background-position: center;
-        }
-
-    </style>
+    </script>
 </head>
 <body class="bg-bg-dark text-white font-sans">
     
@@ -57,9 +43,9 @@
             </a>
             <!-- Navigation Links -->
             <nav class="space-x-4 flex items-center">
-                <a href="#about" class="text-gray-300 hover:text-accent-amber transition duration-150 hidden sm:inline font-medium">About Us</a>
-                <a href="#services" class="text-gray-300 hover:text-accent-amber transition duration-150 hidden sm:inline font-medium">Services</a>
-                <a href="#contact" class="text-white bg-accent-amber hover:bg-amber-600 px-4 py-2 rounded-lg font-semibold text-sm transition duration-300 shadow-lg">
+                <a href="#about" class="text-gray-300 hover:text-accent-amber transition duration-150 hidden sm:inline">About Us</a>
+                <a href="#services" class="text-gray-300 hover:text-accent-amber transition duration-150 hidden sm:inline">Services</a>
+                <a href="#contact" class="text-white bg-accent-amber hover:bg-amber-600 px-4 py-2 rounded-lg font-semibold text-sm transition duration-300 shadow-md">
                     Request a Quote
                 </a>
             </nav>
@@ -68,28 +54,22 @@
 
     <main>
         <!-- 1. Hero Section -->
-        <section id="home" class="relative min-h-[70vh] flex items-center bg-gray-900 border-b border-gray-800">
-            <!-- Background Image -->
-            <div class="absolute inset-0 hero-image opacity-70"></div>
-            
-            <!-- Gradient Overlay for Contrast -->
-            <div class="absolute inset-0 hero-overlay"></div>
-
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24 z-20">
+        <section id="home" class="relative pt-24 pb-32 md:pt-32 md:pb-40 bg-gray-900 border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="max-w-4xl mx-auto">
                     <!-- Headline -->
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-tight">
                         Moving Your Goods, <span class="text-accent-amber">Stress-Free</span>
                     </h1>
-                    <p class="text-2xl md:text-3xl font-light text-gray-200 mb-8">
+                    <p class="text-2xl md:text-3xl font-light text-gray-300 mb-8">
                         From Port to Door, We Deliver With Ease.
                     </p>
                     <!-- Sub-Headline -->
-                    <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
                         Whether you’re importing, exporting, or clearing goods, we handle it all - fast, smooth, and without the usual wahala. You focus on your business, we’ll handle the logistics.
                     </p>
                     <!-- Call-to-Action -->
-                    <a href="#contact" class="inline-block px-10 py-4 text-xl font-bold bg-primary-blue rounded-xl hover:bg-blue-800 transition duration-300 shadow-2xl shadow-primary-blue/50 transform hover:scale-[1.02]">
+                    <a href="#contact" class="inline-block px-10 py-4 text-xl font-bold bg-primary-blue rounded-xl hover:bg-blue-800 transition duration-300 shadow-2xl shadow-primary-blue/50">
                         Request a Quote | Let’s Move Your Goods
                     </a>
                 </div>
@@ -97,7 +77,7 @@
         </section>
 
         <!-- 2. Services Section -->
-        <section id="services" class="py-24 md:py-32 bg-bg-dark border-b border-gray-800">
+        <section id="services" class="py-20 md:py-28 bg-bg-dark border-b border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-accent-amber">
                     Our Core Services
@@ -106,35 +86,35 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Service Card 1: Import & Export -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
                         <i data-lucide="container" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Import & Export Services</h3>
                         <p class="text-gray-400">We handle both air and sea shipments, helping you bring in or send out goods with zero stress. We manage the process from start to finish.</p>
                     </div>
 
                     <!-- Service Card 2: Customs Clearing -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
                         <i data-lucide="clipboard-check" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Customs Clearing</h3>
                         <p class="text-gray-400">No need to worry about delays or complications. Our clearing agents are experienced, fast, and connected - we get your goods out quickly and legally.</p>
                     </div>
 
                     <!-- Service Card 3: Freight Forwarding -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
                         <i data-lucide="truck" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Freight Forwarding</h3>
                         <p class="text-gray-400">We move your cargo anywhere - locally or internationally. Safe, affordable, and always on time.</p>
                     </div>
 
                     <!-- Service Card 4: Door-to-Door Delivery -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-lg">
+                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
                         <i data-lucide="home" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Door-to-Door Delivery</h3>
                         <p class="text-gray-400">From the port straight to your warehouse or shop. You track it, we deliver it.</p>
                     </div>
 
                     <!-- Service Card 5: Logistics Support -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 shadow-lg lg:col-span-1 md:col-span-2 mx-auto md:w-full lg:w-auto">
+                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 lg:col-span-1 md:col-span-2 mx-auto md:w-full lg:w-auto">
                         <i data-lucide="book-open-text" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
                         <h3 class="text-2xl font-bold mb-3 text-white">Logistics Support & Documentation</h3>
                         <p class="text-gray-400">We guide you through all necessary paperwork, permits, and logistics advice to keep your business running smoothly.</p>
@@ -143,13 +123,13 @@
             </div>
         </section>
 
-        <!-- 3. Why Choose Us & About Us Section (Background fixed to bg-bg-dark and text to light blue) -->
-        <section id="about" class="py-24 md:py-32 bg-bg-dark border-b border-gray-700">
+        <!-- 3. Why Choose Us & About Us Section (Combined for layout) -->
+        <section id="about" class="py-20 md:py-28 bg-gray-800 border-b border-gray-700">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
                 
                 <!-- About Us Column -->
                 <div>
-                    <h2 class="text-4xl font-extrabold mb-6 text-blue-400">
+                    <h2 class="text-4xl font-extrabold mb-6 text-primary-blue">
                         Your Reliable Logistics Partner in Lagos, Nigeria
                     </h2>
                     <p class="text-lg text-gray-300 leading-relaxed mb-4">
@@ -194,10 +174,10 @@
             </div>
         </section>
 
-        <!-- 4. Contact & CTA Section (Text color fixed to light blue) -->
-        <section id="contact" class="py-24 md:py-32 bg-bg-dark">
+        <!-- 4. Contact & CTA Section -->
+        <section id="contact" class="py-20 md:py-28 bg-bg-dark">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-400">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-primary-blue">
                     Ready to Move?
                 </h2>
                 <p class="text-2xl font-light text-gray-300 mb-12 max-w-3xl mx-auto">
@@ -208,7 +188,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     
                     <!-- Phone -->
-                    <div class="bg-gray-800 p-6 rounded-xl border-t-4 border-accent-amber shadow-2xl">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
                         <i data-lucide="phone" class="w-8 h-8 text-accent-amber mx-auto mb-3"></i>
                         <h4 class="text-xl font-semibold mb-2 text-white">Call Us</h4>
                         <p class="text-gray-400">
@@ -218,17 +198,17 @@
                     </div>
 
                     <!-- Email -->
-                    <div class="bg-gray-800 p-6 rounded-xl border-t-4 border-primary-blue shadow-2xl">
-                        <i data-lucide="mail" class="w-8 h-8 text-primary-blue mx-auto mb-3"></i>
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <i data-lucide="mail" class="w-8 h-8 text-accent-amber mx-auto mb-3"></i>
                         <h4 class="text-xl font-semibold mb-2 text-white">Email Us</h4>
                         <p class="text-gray-400">
-                            <a href="mailto:talk2adebowale247@gmail.com" class="hover:text-primary-blue transition block">talk2adebowale247@gmail.com</a>
-                            <a href="mailto:talk2debshad@yahoo.com" class="hover:text-primary-blue transition block">talk2debshad@yahoo.com</a>
+                            <a href="mailto:talk2adebowale247@gmail.com" class="hover:text-accent-amber transition block">talk2adebowale247@gmail.com</a>
+                            <a href="mailto:talk2debshad@yahoo.com" class="hover:text-accent-amber transition block">talk2debshad@yahoo.com</a>
                         </p>
                     </div>
 
                     <!-- Address -->
-                    <div class="bg-gray-800 p-6 rounded-xl border-t-4 border-accent-amber shadow-2xl">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
                         <i data-lucide="map-pin" class="w-8 h-8 text-accent-amber mx-auto mb-3"></i>
                         <h4 class="text-xl font-semibold mb-2 text-white">Visit Our Office</h4>
                         <p class="text-gray-400">
@@ -238,7 +218,7 @@
                 </div>
 
                 <!-- Main CTA Button (Repeated) -->
-                <a href="#contact" class="inline-block px-12 py-4 text-xl font-bold bg-accent-amber rounded-xl hover:bg-amber-600 text-gray-900 transition duration-300 shadow-2xl shadow-accent-amber/50 mt-8 transform hover:scale-[1.02] active:scale-100">
+                <a href="#contact" class="inline-block px-12 py-4 text-xl font-bold bg-accent-amber rounded-xl hover:bg-amber-600 text-gray-900 transition duration-300 shadow-2xl shadow-accent-amber/50 mt-8">
                     Start Your Shipment Today!
                 </a>
             </div>
