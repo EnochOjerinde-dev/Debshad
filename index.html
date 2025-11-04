@@ -5,64 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DEBSHAD Nigeria Limited</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1040/1040230.png">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>DEBSHAD Nigeria Limited</h1>
-    <p>Importing • Exporting • Clearing • Forwarding</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">DEBSHAD <span>Nigeria Ltd.</span></h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section id="hero">
+  <section id="home" class="hero">
     <div class="hero-content">
-      <h2>Reliable Global Logistics Partner</h2>
-      <p>We specialize in seamless import, export, clearing, and forwarding services across international borders.</p>
+      <h2>Reliable Import & Export Solutions</h2>
+      <p>We simplify global trade — clearing, forwarding, and logistics handled with precision and speed.</p>
       <a href="#contact" class="btn">Get in Touch</a>
     </div>
   </section>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p><strong>DEBSHAD Nigeria Limited</strong> is a trusted logistics company providing efficient solutions in international trade. We handle import and export documentation, customs clearing, forwarding, and door-to-door delivery with precision and professionalism.</p>
-    <p><strong>CEO:</strong> Adebowale Ojerinde</p>
+  <section id="about" class="about section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        At <strong>DEBSHAD Nigeria Limited</strong>, we specialize in importing and exporting goods across borders.
+        With years of experience in <b>clearing and forwarding</b>, we ensure your cargo reaches its destination safely, swiftly, and without stress.
+      </p>
+      <p>Led by <b>Adebowale Ojerinde</b> (CEO), our mission is to connect businesses to global opportunities with trust and efficiency.</p>
+    </div>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="card">
-        <h3>Import Handling</h3>
-        <p>Customs clearance, shipping documentation, and delivery for imported goods.</p>
-      </div>
-      <div class="card">
-        <h3>Export Processing</h3>
-        <p>End-to-end management of exports from Nigeria to international destinations.</p>
-      </div>
-      <div class="card">
-        <h3>Freight Forwarding</h3>
-        <p>Reliable transport coordination by air, land, and sea to ensure timely delivery.</p>
-      </div>
-      <div class="card">
-        <h3>Consultation & Support</h3>
-        <p>Guidance on international trade compliance and logistics planning.</p>
+  <section id="services" class="services section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <i class="fas fa-ship"></i>
+          <h3>Import & Export</h3>
+          <p>Seamless international trade, handled professionally from start to finish.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-warehouse"></i>
+          <h3>Clearing & Forwarding</h3>
+          <p>Swift customs clearance and forwarding for smooth cargo movement.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-truck"></i>
+          <h3>Logistics Management</h3>
+          <p>Efficient transportation and delivery to keep your business moving.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Lagos, Nigeria<br />
-       📞 +234 000 000 0000<br />
-       ✉️ info@debshadnigeria.com</p>
-    <p>Follow us on social media for updates and logistics insights.</p>
+  <section id="contact" class="contact section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p><i class="fas fa-map-marker-alt"></i> 1, Commercial Road, Eleganza Building, Libra Block, Ground Floor, Apapa, Lagos State.</p>
+      <p><i class="fas fa-phone-alt"></i> 08039330057, 07010955550</p>
+      <p><i class="fas fa-envelope"></i> talk2adebowale247@gmail.com | talk2debshad@yahoo.com</p>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; <span id="year"></span> DEBSHAD Nigeria Limited. All rights reserved.</p>
+  <footer class="footer">
+    <p>© 2025 DEBSHAD Nigeria Limited — All Rights Reserved.</p>
   </footer>
 
   <script src="script.js"></script>
