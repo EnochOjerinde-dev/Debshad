@@ -11,18 +11,16 @@
     <style>
         /* Custom Styles for a professional look and feel */
         html { scroll-behavior: smooth; }
-        .service-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+        .feature-card { transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(30, 144, 255, 0.3); }
+        .service-card { transition: box-shadow 0.3s ease; }
+        .service-card:hover { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); }
     </style>
     <script>
+        // Use standard Tailwind colors for the new blue/white theme
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        'primary-blue': '#1e3a8a', /* Dark Blue for Trust */
-                        'accent-amber': '#f59e0b', /* Amber for Urgency/Action */
-                        'bg-dark': '#0f172a',      /* Slate 900 */
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     }
@@ -31,21 +29,21 @@
         }
     </script>
 </head>
-<body class="bg-bg-dark text-white font-sans">
+<body class="bg-white text-gray-800 font-sans">
     
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-bg-dark/95 backdrop-blur-sm shadow-xl border-b border-gray-800">
+    <!-- Header / Navigation (White/Blue Theme) -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <!-- Logo -->
-            <a href="#" class="text-3xl font-extrabold tracking-tight text-primary-blue flex items-center">
-                <i data-lucide="package-2" class="w-8 h-8 mr-2 text-accent-amber"></i>
+            <a href="#" class="text-3xl font-extrabold tracking-tight text-blue-800 flex items-center">
+                <i data-lucide="package-2" class="w-8 h-8 mr-2 text-blue-600"></i>
                 DEBSHAD
             </a>
             <!-- Navigation Links -->
-            <nav class="space-x-4 flex items-center">
-                <a href="#about" class="text-gray-300 hover:text-accent-amber transition duration-150 hidden sm:inline">About Us</a>
-                <a href="#services" class="text-gray-300 hover:text-accent-amber transition duration-150 hidden sm:inline">Services</a>
-                <a href="#contact" class="text-white bg-accent-amber hover:bg-amber-600 px-4 py-2 rounded-lg font-semibold text-sm transition duration-300 shadow-md">
+            <nav class="space-x-6 flex items-center text-gray-700 font-medium">
+                <a href="#about" class="hover:text-blue-600 transition duration-150 hidden sm:inline">About Us</a>
+                <a href="#services" class="hover:text-blue-600 transition duration-150 hidden sm:inline">Services</a>
+                <a href="#contact" class="text-white bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full font-semibold text-sm transition duration-300 shadow-md shadow-blue-500/50">
                     Request a Quote
                 </a>
             </nav>
@@ -53,135 +51,171 @@
     </header>
 
     <main>
-        <!-- 1. Hero Section -->
-        <section id="home" class="relative pt-24 pb-32 md:pt-32 md:pb-40 bg-gray-900 border-b border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="max-w-4xl mx-auto">
+        <!-- 1. Hero Section (Deep Blue Block, matching the design's top section) -->
+        <section id="home" class="relative pt-24 pb-32 md:pt-32 md:pb-40 bg-blue-800 border-b border-blue-900">
+            <!-- Background detail similar to the design's image overlay -->
+            <div class="absolute inset-0 bg-black/40"></div> 
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-white">
+                <div class="max-w-4xl">
+                    <p class="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-2">KEEP YOUR BUSINESS MOVING</p>
                     <!-- Headline -->
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 leading-tight">
-                        Moving Your Goods, <span class="text-accent-amber">Stress-Free</span>
+                        We Provide <span class="text-blue-400">Reliable</span> Logistics Services
                     </h1>
-                    <p class="text-2xl md:text-3xl font-light text-gray-300 mb-8">
-                        From Port to Door, We Deliver With Ease.
-                    </p>
                     <!-- Sub-Headline -->
-                    <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-                        Whether you’re importing, exporting, or clearing goods, we handle it all - fast, smooth, and without the usual wahala. You focus on your business, we’ll handle the logistics.
+                    <p class="text-xl md:text-2xl font-light text-gray-200 mb-10 max-w-3xl">
+                        From Port to Door, We Deliver With Ease. We handle all customs clearing and freight forwarding in Lagos, stress-free.
                     </p>
                     <!-- Call-to-Action -->
-                    <a href="#contact" class="inline-block px-10 py-4 text-xl font-bold bg-primary-blue rounded-xl hover:bg-blue-800 transition duration-300 shadow-2xl shadow-primary-blue/50">
-                        Request a Quote | Let’s Move Your Goods
+                    <div class="space-x-4">
+                        <a href="#about" class="inline-block px-8 py-3 text-lg font-bold bg-blue-600 rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg shadow-blue-500/50">
+                            Learn More
+                        </a>
+                        <a href="#contact" class="inline-block px-8 py-3 text-lg font-bold border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-800 transition duration-300">
+                            Request a Quote
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Feature Cards Section (Matching the 4-column blue boxes) -->
+        <section class="relative z-10 -mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Feature Card 1: Quality Service -->
+                <div class="feature-card bg-blue-600 text-white p-6 rounded-xl shadow-xl shadow-blue-500/30">
+                    <i data-lucide="award" class="w-10 h-10 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2">Quality Service</h3>
+                    <p class="text-sm text-blue-200">Our promise is reliable and prompt service, ensuring your goods are handled with care from start to finish.</p>
+                </div>
+
+                <!-- Feature Card 2: Online Booking -->
+                <div class="feature-card bg-blue-600 text-white p-6 rounded-xl shadow-xl shadow-blue-500/30">
+                    <i data-lucide="calendar-check" class="w-10 h-10 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2">Fast Clearing</h3>
+                    <p class="text-sm text-blue-200">Experienced agents mean zero delays at the ports. We get your cargo cleared quickly and legally.</p>
+                </div>
+
+                <!-- Feature Card 3: Modern Machines -->
+                <div class="feature-card bg-blue-600 text-white p-6 rounded-xl shadow-xl shadow-blue-500/30">
+                    <i data-lucide="map-pin" class="w-10 h-10 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2">Lagos Experts</h3>
+                    <p class="text-sm text-blue-200">We navigate Apapa, Tincan, and all Lagos logistics complexities better than anyone.</p>
+                </div>
+
+                <!-- Feature Card 4: Affordable Pricing -->
+                <div class="feature-card bg-blue-600 text-white p-6 rounded-xl shadow-xl shadow-blue-500/30">
+                    <i data-lucide="receipt" class="w-10 h-10 mb-3"></i>
+                    <h3 class="text-xl font-bold mb-2">Transparent Pricing</h3>
+                    <p class="text-sm text-blue-200">What we quote is what you pay. No hidden costs or surprise fees.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 3. About Us / Image Section (Matching the two-column structure) -->
+        <section id="about" class="py-20 md:py-28 bg-gray-50 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Column: Image Placeholder Block -->
+                <div class="relative h-96 w-full rounded-2xl shadow-2xl overflow-hidden">
+                    <!-- Placeholder for image in the design -->
+                    <div class="bg-blue-900 h-full w-full flex items-center justify-center text-white text-3xl font-bold">
+                        LOGISTICS IMAGE HERE
+                    </div>
+                    <!-- Styled tag overlay, mimicking the "20 Years of Service" tag -->
+                    <div class="absolute bottom-6 right-6 bg-blue-600 text-white p-3 rounded-xl shadow-lg transform rotate-3">
+                        <span class="text-sm font-semibold block">10+ Years of</span>
+                        <span class="text-xl font-bold">Trusted Service</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: About Us Text -->
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">ABOUT US</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900">
+                        We Provide Quality Logistics Solutions
+                    </h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        At <span class="font-bold text-blue-600">DEBSHAD</span>, we specialize in making importing and exporting simple across Nigeria. From professional customs clearing to reliable door-to-door delivery, we handle the entire process.
+                    </p>
+                    <ul class="space-y-3 text-gray-700 mb-8">
+                        <li class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0"></i>
+                            Dedicated team of expert clearing agents.
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0"></i>
+                            Guaranteed fast and legal process execution.
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="chevrons-right" class="w-5 h-5 text-blue-600 mr-2 mt-1 flex-shrink-0"></i>
+                            Real-time tracking and constant communication.
+                        </li>
+                    </ul>
+                    <a href="#services" class="inline-block text-white bg-blue-600 hover:bg-blue-700 font-semibold px-6 py-3 rounded-lg transition duration-150">
+                        Discover More &rarr;
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Services Section -->
-        <section id="services" class="py-20 md:py-28 bg-bg-dark border-b border-gray-800">
+        <!-- 4. Services Section (What We Offer) -->
+        <section id="services" class="py-20 md:py-28 bg-white border-b border-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-accent-amber">
-                    Our Core Services
+                <!-- Title Style matching the design's "SERVICES / What We Offer" -->
+                <p class="text-sm font-semibold uppercase tracking-widest text-center text-blue-600 mb-1">SERVICES</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-gray-900">
+                    What We Offer
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     
                     <!-- Service Card 1: Import & Export -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
-                        <i data-lucide="container" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Import & Export Services</h3>
-                        <p class="text-gray-400">We handle both air and sea shipments, helping you bring in or send out goods with zero stress. We manage the process from start to finish.</p>
+                    <div class="service-card bg-white p-6 rounded-xl border border-gray-200 text-center shadow-lg hover:border-blue-500">
+                        <!-- Icon Placeholder -->
+                        <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-blue-500/30">
+                            <i data-lucide="container" class="w-10 h-10 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Import & Export</h3>
+                        <p class="text-gray-600 mb-4">We manage air and sea shipments, simplifying the documentation and movement of goods internationally.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 transition block">Read More &rarr;</a>
                     </div>
 
                     <!-- Service Card 2: Customs Clearing -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
-                        <i data-lucide="clipboard-check" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Customs Clearing</h3>
-                        <p class="text-gray-400">No need to worry about delays or complications. Our clearing agents are experienced, fast, and connected - we get your goods out quickly and legally.</p>
+                    <div class="service-card bg-white p-6 rounded-xl border border-gray-200 text-center shadow-lg hover:border-blue-500">
+                        <!-- Icon Placeholder -->
+                        <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-blue-500/30">
+                            <i data-lucide="clipboard-check" class="w-10 h-10 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Customs Clearing</h3>
+                        <p class="text-gray-600 mb-4">Our expert agents ensure a quick, legal, and smooth clearance process at all major Lagos ports.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 transition block">Read More &rarr;</a>
                     </div>
 
                     <!-- Service Card 3: Freight Forwarding -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
-                        <i data-lucide="truck" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Freight Forwarding</h3>
-                        <p class="text-gray-400">We move your cargo anywhere - locally or internationally. Safe, affordable, and always on time.</p>
+                    <div class="service-card bg-white p-6 rounded-xl border border-gray-200 text-center shadow-lg hover:border-blue-500">
+                        <!-- Icon Placeholder -->
+                        <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-blue-500/30">
+                            <i data-lucide="truck" class="w-10 h-10 text-blue-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900">Freight Forwarding</h3>
+                        <p class="text-gray-600 mb-4">Safe and timely movement of your cargo, locally and internationally, with full tracking support.</p>
+                        <a href="#contact" class="text-blue-600 font-semibold hover:text-blue-800 transition block">Read More &rarr;</a>
                     </div>
 
-                    <!-- Service Card 4: Door-to-Door Delivery -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700">
-                        <i data-lucide="home" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Door-to-Door Delivery</h3>
-                        <p class="text-gray-400">From the port straight to your warehouse or shop. You track it, we deliver it.</p>
-                    </div>
-
-                    <!-- Service Card 5: Logistics Support -->
-                    <div class="service-card bg-gray-800 p-8 rounded-xl border border-gray-700 lg:col-span-1 md:col-span-2 mx-auto md:w-full lg:w-auto">
-                        <i data-lucide="book-open-text" class="w-10 h-10 text-primary-blue mb-4 bg-amber-200 p-2 rounded-full"></i>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Logistics Support & Documentation</h3>
-                        <p class="text-gray-400">We guide you through all necessary paperwork, permits, and logistics advice to keep your business running smoothly.</p>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Why Choose Us & About Us Section (Combined for layout) -->
-        <section id="about" class="py-20 md:py-28 bg-gray-800 border-b border-gray-700">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
-                <!-- About Us Column -->
-                <div>
-                    <h2 class="text-4xl font-extrabold mb-6 text-blue-400">
-                        Your Reliable Logistics Partner in Lagos, Nigeria
-                    </h2>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-4">
-                        At <span class="font-bold text-accent-amber">DEBSHAD</span>, we make importing and exporting simple. From clearing and forwarding to door-to-door delivery, our team ensures your goods move safely, quickly, and with full peace of mind.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-8">
-                        We understand how stressful logistics can be - the paperwork, customs, delays - that’s why we built a service that handles everything for you. No long stories, no hidden charges - just honest, reliable, and fast delivery.
-                    </p>
-                    <a href="#contact" class="inline-block text-accent-amber hover:text-amber-400 font-semibold border-b-2 border-accent-amber pb-1 transition duration-150">
-                        Discuss Your Needs &rarr;
-                    </a>
-                </div>
-
-                <!-- Why Choose Us Column -->
-                <div>
-                    <h3 id="why-us" class="text-4xl font-extrabold mb-6 text-accent-amber">
-                        Why Choose DEBSHAD?
-                    </h3>
-                    <ul class="space-y-4 text-lg">
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i>
-                            <span class="text-gray-200"><span class="font-bold">We Know Lagos, We Know Logistics</span> – From Apapa to Tincan, we know how to get your goods out fast.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i>
-                            <span class="text-gray-200"><span class="font-bold">Trusted Team</span> – Professional, experienced, and friendly staff handle your cargo.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i>
-                            <span class="text-gray-200"><span class="font-bold">Transparent Pricing</span> – What we tell you is what you pay. No hidden charges.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i>
-                            <span class="text-gray-200"><span class="font-bold">Real-Time Updates</span> – You’ll always know exactly where your goods are.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-6 h-6 text-green-400 mr-3 mt-1 flex-shrink-0"></i>
-                            <span class="text-gray-200"><span class="font-bold">Customer-First Service</span> – We treat every shipment like it’s our own.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. Contact & CTA Section -->
-        <section id="contact" class="py-20 md:py-28 bg-bg-dark">
+        <!-- 5. Contact & CTA Section (Clean on white background) -->
+        <section id="contact" class="py-20 md:py-28 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <!-- COLOR CHANGED HERE -->
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-400">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-600">
                     Ready to Move?
                 </h2>
-                <p class="text-2xl font-light text-gray-300 mb-12 max-w-3xl mx-auto">
+                <p class="text-xl font-light text-gray-700 mb-12 max-w-3xl mx-auto">
                     Let’s take the stress out of your shipping. Talk to us today - we’ll move your goods quickly, safely, and affordably.
                 </p>
 
@@ -189,50 +223,50 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     
                     <!-- Phone -->
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-                        <i data-lucide="phone" class="w-8 h-8 text-accent-amber mx-auto mb-3"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-white">Call Us</h4>
-                        <p class="text-gray-400">
-                            <a href="tel:08039330057" class="hover:text-accent-amber transition block">08039330057</a>
-                            <a href="tel:07010955550" class="hover:text-accent-amber transition block">07010955550</a>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-md">
+                        <i data-lucide="phone" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Call Us</h4>
+                        <p class="text-gray-600">
+                            <a href="tel:08039330057" class="hover:text-blue-600 transition block">08039330057</a>
+                            <a href="tel:07010955550" class="hover:text-blue-600 transition block">07010955550</a>
                         </p>
                     </div>
 
                     <!-- Email -->
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-                        <i data-lucide="mail" class="w-8 h-8 text-accent-amber mx-auto mb-3"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-white">Email Us</h4>
-                        <p class="text-gray-400">
-                            <a href="mailto:talk2adebowale247@gmail.com" class="hover:text-accent-amber transition block">talk2adebowale247@gmail.com</a>
-                            <a href="mailto:talk2debshad@yahoo.com" class="hover:text-accent-amber transition block">talk2debshad@yahoo.com</a>
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-md">
+                        <i data-lucide="mail" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Email Us</h4>
+                        <p class="text-gray-600">
+                            <a href="mailto:talk2adebowale247@gmail.com" class="hover:text-blue-600 transition block">talk2adebowale247@gmail.com</a>
+                            <a href="mailto:talk2debshad@yahoo.com" class="hover:text-blue-600 transition block">talk2debshad@yahoo.com</a>
                         </p>
                     </div>
 
                     <!-- Address -->
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
-                        <i data-lucide="map-pin" class="w-8 h-8 text-accent-amber mx-auto mb-3"></i>
-                        <h4 class="text-xl font-semibold mb-2 text-white">Visit Our Office</h4>
-                        <p class="text-gray-400">
-                            1 Commercial Road, Eleganza Building, Libra Block, Ground Floor, Apapa, Lagos State.
+                    <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-md">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+                        <h4 class="text-xl font-semibold mb-2 text-gray-900">Visit Our Office</h4>
+                        <p class="text-gray-600">
+                            1 Commercial Road, Eleganza Building, Libra Block, Apapa, Lagos State.
                         </p>
                     </div>
                 </div>
 
-                <!-- Main CTA Button (Repeated) -->
-                <a href="#contact" class="inline-block px-12 py-4 text-xl font-bold bg-accent-amber rounded-xl hover:bg-amber-600 text-gray-900 transition duration-300 shadow-2xl shadow-accent-amber/50 mt-8">
+                <!-- Main CTA Button -->
+                <a href="#contact" class="inline-block px-12 py-4 text-xl font-bold bg-blue-600 rounded-full hover:bg-blue-700 text-white transition duration-300 shadow-xl shadow-blue-500/50 mt-8">
                     Start Your Shipment Today!
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t-4 border-primary-blue">
-        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400 text-sm mb-2">
+    <!-- Footer (Deep Blue Background) -->
+    <footer class="bg-blue-900">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-white">
+            <p class="text-blue-200 text-sm mb-2">
                 &copy; 2025 DEBSHAD. All rights reserved.
             </p>
-            <p class="text-lg font-bold text-accent-amber">
+            <p class="text-xl font-bold text-blue-400">
                 DEBSHAD — Your Trusted Clearing & Forwarding Partner in Lagos.
             </p>
         </div>
